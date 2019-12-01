@@ -1,0 +1,26 @@
+<!-- cards group -->
+<div class="container">
+
+  <button type="button" class="btn btn-secondary" routerLink="/catalog/accessories">Return</button>
+
+  <hr>
+
+  <div *ngIf="items.length <= 0" class="alert alert-warning" role="alert">
+    There are no items to display
+  </div>
+
+  <div *ngIf="items.length > 0" class="card-group row row-cols-1 row-cols-md-3">
+
+    <div *ngFor="let item of items" class="card">
+      <img src="assets/img/brac3.jpg" class="card-img-top h-50" alt="">
+      <div class="card-body">
+        <h5 class="card-title">{{ item.name }}</h5>
+        <p class="card-text">{{ item.description }}</p>
+      </div>
+      <div class="card-footer">
+        <small class="text-muted">Last updated 3 mins ago</small>
+      </div>
+    </div>
+
+  </div>
+</div>
